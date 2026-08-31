@@ -1,0 +1,70 @@
+import {
+  BadgeCheck,
+  BarChart3,
+  BookmarkCheck,
+  BrainCircuit,
+  CircleGauge,
+  Columns3,
+  GitCompareArrows,
+  LayoutDashboard,
+  Lightbulb,
+  ListFilter,
+  ListChecks,
+  ScatterChart,
+  Search,
+  ShieldCheck,
+  Target,
+  TrendingUp,
+  UserRound,
+  UsersRound,
+} from "lucide-react";
+
+export const NAV_SECTIONS = [
+  { type: "link", to: "/", label: "Overview", icon: LayoutDashboard, end: true },
+  {
+    type: "group",
+    key: "player-analysis",
+    label: "Player Analysis",
+    icon: UsersRound,
+    children: [
+      { to: "/players", label: "Player Directory", icon: ListFilter },
+      { to: "/player-profile", label: "Player Profile", icon: UserRound },
+      { to: "/player-comparison", label: "Player Comparison", icon: Columns3 },
+      { to: "/kmeans-profiles", label: "K-Means Profiles", icon: ScatterChart },
+    ],
+  },
+  { type: "link", to: "/shortlist", label: "Player Shortlist", icon: BookmarkCheck },
+  {
+    type: "group",
+    key: "similar-players",
+    label: "Similar Players",
+    icon: Search,
+    children: [
+      { to: "/similar-players", label: "Recommendation Search", icon: GitCompareArrows },
+      { to: "/knn-validation", label: "KNN Validation", icon: BadgeCheck },
+    ],
+  },
+  {
+    type: "group",
+    key: "forecast",
+    label: "Forecast",
+    icon: TrendingUp,
+    children: [
+      { to: "/forecast", label: "Player Forecast", icon: TrendingUp },
+      { to: "/forecast#model-comparison", label: "Model Comparison", icon: BrainCircuit },
+      { to: "/league-comparison", label: "League Comparison", icon: BarChart3 },
+    ],
+  },
+  {
+    type: "group",
+    key: "team-optimiser",
+    label: "Team Optimiser",
+    icon: Target,
+    children: [
+      { to: "/team-optimiser?view=shortlist", label: "Create XI from Shortlist", icon: ListChecks },
+      { to: "/team-optimiser?view=frozen", label: "Frozen Evaluation Teams", icon: ShieldCheck },
+    ],
+  },
+  { type: "link", to: "/explainability", label: "Explainability", icon: Lightbulb },
+  { type: "link", to: "/system-status", label: "System Status", icon: CircleGauge },
+];

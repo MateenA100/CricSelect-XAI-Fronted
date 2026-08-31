@@ -1,0 +1,114 @@
+.filters {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.35fr) minmax(150px, .75fr) minmax(240px, 1.35fr) minmax(160px, .8fr);
+  gap: var(--space-4);
+  align-items: end;
+}
+
+.filterCard {
+  z-index: 10;
+  overflow: visible !important;
+}
+
+.searchWrap { position: relative; }
+
+.suggestions {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 6px);
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  border: 1px solid var(--colour-border);
+  border-radius: var(--radius-md);
+  background: var(--colour-white);
+  box-shadow: var(--shadow-lg);
+}
+
+.suggestions button {
+  display: flex;
+  width: 100%;
+  gap: var(--space-3);
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  border: 0;
+  border-bottom: 1px solid var(--colour-border);
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
+.suggestions li:last-child button { border-bottom: 0; }
+.suggestions button:hover { background: var(--colour-blue-light); }
+.suggestions span, .table td:first-child { display: grid; }
+.suggestions small, .table small { color: var(--colour-muted); }
+
+.resultContext {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+  color: var(--colour-muted);
+  font-size: var(--font-size-sm);
+}
+
+.resultActions { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
+
+.rowActions { display: flex; gap: var(--space-2); align-items: center; white-space: nowrap; }
+
+.tableWrap { overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; }
+.table th {
+  padding: var(--space-3);
+  border-bottom: 1px solid var(--colour-border);
+  color: var(--colour-muted);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.04em;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.table td {
+  padding: var(--space-4) var(--space-3);
+  border-bottom: 1px solid var(--colour-border);
+  vertical-align: middle;
+}
+.table tbody tr:hover { background: var(--colour-background); }
+.table tbody tr:last-child td { border-bottom: 0; }
+.table td:nth-child(n+4) { white-space: nowrap; }
+
+.roleBadge {
+  display: inline-flex;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-full);
+  background: var(--colour-blue-light);
+  color: var(--colour-blue);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+}
+
+.clusterName {
+  display: block;
+  max-width: 250px;
+  color: var(--colour-navy);
+  font-size: var(--font-size-sm);
+  line-height: 1.4;
+}
+
+.empty {
+  padding: var(--space-10);
+  color: var(--colour-muted);
+  text-align: center;
+}
+
+@media (max-width: 1250px) {
+  .filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 640px) {
+  .filters { grid-template-columns: 1fr; }
+  .table th:nth-child(3), .table td:nth-child(3),
+  .table th:nth-child(5), .table td:nth-child(5),
+  .table th:nth-child(6), .table td:nth-child(6) { display: none; }
+}

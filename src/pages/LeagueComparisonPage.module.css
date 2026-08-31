@@ -1,0 +1,33 @@
+.page { display: grid; gap: var(--space-6); }
+.summaryMetrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); }
+.leagueGrid { display: grid; grid-template-columns: repeat(5, minmax(190px, 1fr)); gap: var(--space-4); }
+.playerCount { display: grid; place-items: center; min-width: 36px; height: 36px; border-radius: var(--radius-full); background: var(--colour-green-light); color: var(--colour-green); }
+.datasetShare, .tableNote { color: var(--colour-muted); font-size: var(--font-size-sm); }
+.miniMetrics { display: grid; gap: var(--space-2); margin: var(--space-4) 0; }
+.miniMetrics > div { display: grid; grid-template-columns: auto 1fr auto; gap: var(--space-2); align-items: center; padding: var(--space-2); border-radius: var(--radius-sm); background: var(--colour-background); }
+.miniMetrics svg { color: var(--colour-green); }
+.miniMetrics span { color: var(--colour-muted); font-size: var(--font-size-xs); }
+.stackedBar { display: flex; height: 11px; overflow: hidden; border-radius: var(--radius-full); background: var(--colour-background); }
+.batters { background: var(--colour-blue); }
+.bowlers { background: var(--colour-green); }
+.allRounders { background: var(--colour-amber); }
+.wicketkeepers { background: #8b5cf6; }
+.roleCounts { display: grid; gap: var(--space-2); margin-top: var(--space-4); }
+.roleCounts li { display: grid; grid-template-columns: auto 1fr auto; gap: var(--space-2); align-items: center; font-size: var(--font-size-xs); }
+.roleCounts i { width: 8px; height: 8px; border-radius: var(--radius-full); }
+.roleCounts span { color: var(--colour-muted); }
+.comparisonGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); }
+.barList { display: grid; gap: var(--space-4); }
+.barRow { display: grid; grid-template-columns: 70px 1fr 58px; gap: var(--space-3); align-items: center; font-size: var(--font-size-sm); }
+.barRow > span { color: var(--colour-navy); font-weight: var(--font-weight-semibold); }
+.barRow > strong { text-align: right; }
+.track { height: 9px; overflow: hidden; border-radius: var(--radius-full); background: var(--colour-background); }
+.track i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--colour-navy), var(--colour-green)); }
+.tableWrap { overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; }
+.table th, .table td { padding: var(--space-3); border-bottom: 1px solid var(--colour-border); text-align: left; white-space: nowrap; }
+.table th { color: var(--colour-muted); font-size: var(--font-size-xs); text-transform: uppercase; }
+.table tbody tr:last-child td { border-bottom: 0; }
+@media (max-width: 1250px) { .leagueGrid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 1000px) { .comparisonGrid { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .summaryMetrics, .leagueGrid { grid-template-columns: 1fr; } }

@@ -1,0 +1,80 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.content,
+.clusters {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.clusters {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.league,
+.help {
+  color: var(--colour-muted);
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.clusterName {
+  color: var(--colour-navy);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-2);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-4);
+}
+
+.statSections {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.statGroup {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.statGroup h4 {
+  color: var(--colour-navy);
+  font-size: var(--font-size-base);
+}
+
+.stats div {
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--colour-background);
+}
+
+.stats dt {
+  color: var(--colour-muted);
+  font-size: var(--font-size-sm);
+}
+
+.stats dd {
+  margin: var(--space-1) 0 0;
+  font-weight: var(--font-weight-semibold);
+}
+
+@media (max-width: 1000px) {
+  .layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .clusters, .metrics, .stats { grid-template-columns: 1fr; }
+}

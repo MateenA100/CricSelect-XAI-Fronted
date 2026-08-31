@@ -1,0 +1,69 @@
+:root {
+  /* Cricket intelligence palette */
+  --colour-navy: #071e2f;
+  --colour-navy-light: #0d3046;
+  --colour-navy-soft: #123d55;
+  --colour-primary: #0b9365;
+  --colour-green: #0b9365;
+  --colour-green-dark: #08714d;
+  --colour-green-light: #e6f7f0;
+  --colour-gold: #d7a83b;
+  --colour-gold-light: #fff7df;
+  --colour-amber: #c78113;
+  --colour-amber-light: #fff4dc;
+  --colour-red: #cf4f4a;
+  --colour-red-light: #fcedeC;
+  --colour-blue: #2675b8;
+  --colour-blue-light: #e9f3fb;
+  --colour-background: #f2f6f5;
+  --colour-surface-muted: #f7faf9;
+  --colour-border: #dbe5e1;
+  --colour-border-strong: #c6d5cf;
+  --colour-white: #ffffff;
+  --colour-text: #12242b;
+  --colour-muted: #607178;
+  --colour-muted-light: #91a0a5;
+
+  /* Typography */
+  --font-family: "Aptos", "Segoe UI Variable", "Segoe UI", Inter, Arial, sans-serif;
+  --font-display: "Aptos Display", "Segoe UI Variable Display", "Segoe UI", Arial, sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.125rem;
+  --font-size-lg: 1.45rem;
+  --font-size-xl: 1.95rem;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 750;
+  --line-height-base: 1.55;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  --radius-sm: 7px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 26px;
+  --radius-full: 999px;
+
+  --shadow-sm: 0 2px 5px rgba(7, 30, 47, 0.05);
+  --shadow-md: 0 10px 28px rgba(7, 30, 47, 0.08);
+  --shadow-lg: 0 22px 55px rgba(7, 30, 47, 0.14);
+  --shadow-green: 0 14px 34px rgba(11, 147, 101, 0.18);
+
+  --sidebar-width: 272px;
+  --sidebar-width-collapsed: 78px;
+  --header-height: 76px;
+
+  --transition-fast: 150ms ease;
+  --transition-base: 240ms cubic-bezier(.2,.8,.2,1);
+}

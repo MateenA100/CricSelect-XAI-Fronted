@@ -1,0 +1,21 @@
+.page { display: grid; gap: var(--space-6); margin-top: var(--space-5); }
+.metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); }
+.roleSummary { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-5); }
+.roleSummary span { padding: var(--space-2) var(--space-3); border-radius: var(--radius-full); background: var(--colour-background); color: var(--colour-muted); font-size: var(--font-size-sm); }
+.roleSummary strong { color: var(--colour-navy); }
+.tableWrap { overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; }
+.table th, .table td { padding: var(--space-3); border-bottom: 1px solid var(--colour-border); text-align: left; }
+.table th { color: var(--colour-muted); font-size: var(--font-size-xs); letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; }
+.table td:nth-child(n+4) { white-space: nowrap; }
+.table tbody tr:last-child td { border-bottom: 0; }
+.roleBadge { display: inline-flex; padding: var(--space-1) var(--space-2); border-radius: var(--radius-full); background: var(--colour-blue-light); color: var(--colour-blue); font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); white-space: nowrap; }
+.storageNote { color: var(--colour-muted); font-size: var(--font-size-xs); text-align: center; }
+.actions { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.resultIntro { display: grid; gap: var(--space-3); margin-bottom: var(--space-5); color: var(--colour-muted); }
+.resultIntro p { margin: 0; }
+.resultStats { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.resultStats span { padding: var(--space-2) var(--space-3); border-radius: var(--radius-full); background: var(--colour-background); }
+.resultStats strong { color: var(--colour-navy); }
+.methodNote { margin: var(--space-5) 0 0; color: var(--colour-muted); font-size: var(--font-size-xs); line-height: 1.6; }
+@media (max-width: 760px) { .metrics { grid-template-columns: 1fr; } .table th:nth-child(3), .table td:nth-child(3) { display: none; } }

@@ -1,0 +1,55 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  border: 1px solid transparent;
+  letter-spacing:.015em;
+}
+
+.success {
+  background: var(--colour-green-light);
+  color: var(--colour-green-dark);
+  border-color: rgba(11,147,101,.25);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.35);
+}
+
+.warning {
+  background: var(--colour-amber-light);
+  color: var(--colour-amber);
+  border-color: var(--colour-amber);
+}
+
+.error {
+  background: var(--colour-red-light);
+  color: var(--colour-red);
+  border-color: var(--colour-red);
+}
+
+.info {
+  background: var(--colour-blue-light);
+  color: var(--colour-blue);
+  border-color: var(--colour-blue);
+}
+
+.neutral {
+  background: var(--colour-background);
+  color: var(--colour-muted);
+  border-color: var(--colour-border);
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

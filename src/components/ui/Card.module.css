@@ -1,0 +1,6 @@
+.card { position:relative; overflow:hidden; background:rgba(255,255,255,.94); border:1px solid rgba(219,229,225,.95); border-radius:var(--radius-lg); box-shadow:var(--shadow-sm); padding:22px; transition:transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base); }
+.card::before { content:""; position:absolute; top:0; left:22px; right:22px; height:2px; opacity:.5; background:linear-gradient(90deg, var(--colour-primary), transparent); }
+.card:hover { transform:translateY(-2px); box-shadow:var(--shadow-md); border-color:var(--colour-border-strong); }
+.header { display:flex; align-items:center; justify-content:space-between; margin-bottom:18px; gap:12px; }
+.title { font-size:1.02rem; font-weight:700; color:var(--colour-navy); }
+.body { display:flex; flex-direction:column; gap:12px; }

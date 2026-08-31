@@ -1,0 +1,7 @@
+.mark { display: inline-grid; place-items: center; width: 44px; height: 44px; flex: 0 0 44px; filter: drop-shadow(0 8px 16px rgba(0, 0, 0, .22)); }
+.mark svg { width: 100%; height: 100%; overflow: visible; }
+.outer { fill: #041722; stroke: rgba(255,255,255,.28); stroke-width: 1; }
+.bat { fill: #f6c453; }
+.ball { fill: #e4524d; stroke: #fff; stroke-width: 1.5; }
+.seam { fill: none; stroke: #fff; stroke-width: 1; stroke-linecap: round; }
+.compact { width: 38px; height: 38px; flex-basis: 38px; }

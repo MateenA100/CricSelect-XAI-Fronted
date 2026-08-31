@@ -1,0 +1,90 @@
+@import "./variables.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--colour-text);
+  background:
+    radial-gradient(circle at 92% 2%, rgba(11, 147, 101, .08), transparent 24rem),
+    linear-gradient(180deg, #f7faf9 0, var(--colour-background) 34rem);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -.018em; }
+
+::selection { background: rgba(11, 147, 101, .2); color: var(--colour-navy); }
+
+* { scrollbar-width: thin; scrollbar-color: #9fbab0 transparent; }
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-thumb { background: #9fbab0; border-radius: 99px; }
+
+button,
+input,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Visible keyboard focus everywhere - never rely on colour alone */
+:focus-visible {
+  outline: 3px solid rgba(11, 147, 101, .42);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Utility: visually hidden but available to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}

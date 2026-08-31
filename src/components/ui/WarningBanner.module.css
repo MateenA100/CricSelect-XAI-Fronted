@@ -1,0 +1,35 @@
+.banner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  font-size: var(--font-size-sm);
+}
+
+.banner p {
+  margin: 0;
+}
+
+.warning {
+  background: var(--colour-amber-light);
+  border-color: var(--colour-amber);
+  color: #7a5605;
+}
+
+.warning svg {
+  color: var(--colour-amber);
+  flex-shrink: 0;
+}
+
+.info {
+  background: var(--colour-blue-light);
+  border-color: var(--colour-blue);
+  color: #1c4d7a;
+}
+
+.info svg {
+  color: var(--colour-blue);
+  flex-shrink: 0;
+}

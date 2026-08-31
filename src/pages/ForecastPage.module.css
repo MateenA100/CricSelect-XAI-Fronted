@@ -1,0 +1,41 @@
+.page { display: grid; gap: var(--space-10); }
+.forecastLayout { display: grid; grid-template-columns: minmax(280px, .7fr) minmax(0, 1.6fr); gap: var(--space-5); align-items: start; }
+.forecastResult { display: grid; gap: var(--space-5); }
+.metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); }
+.probabilityPanel { display: grid; gap: var(--space-4); margin-top: var(--space-6); }
+.probabilityHeading { display: flex; justify-content: space-between; text-transform: capitalize; color: var(--colour-muted); font-size: var(--font-size-sm); }
+.probabilityHeading strong { color: var(--colour-navy); }
+.track { height: 9px; margin-top: var(--space-2); overflow: hidden; border-radius: var(--radius-full); background: var(--colour-background); }
+.track span { display: block; height: 100%; border-radius: inherit; }
+.poor { background: var(--colour-red); }
+.average { background: var(--colour-amber); }
+.elite { background: var(--colour-green); }
+.forecastDetailGrid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); }
+.modelAgreement, .contextGrid { display: grid; gap: var(--space-2); }
+.modelAgreement > div, .contextGrid > div { display: flex; justify-content: space-between; gap: var(--space-3); padding: var(--space-2) 0; border-bottom: 1px solid var(--colour-border); }
+.modelAgreement span, .contextGrid span { color: var(--colour-muted); }
+.modelAgreement strong, .contextGrid strong { color: var(--colour-navy); text-align: right; }
+
+.comparisonSection { display: grid; gap: var(--space-5); padding-top: var(--space-8); border-top: 1px solid var(--colour-border); }
+.sectionHeading { display: flex; align-items: end; justify-content: space-between; gap: var(--space-4); }
+.sectionHeading span { color: var(--colour-green); font-size: var(--font-size-sm); font-weight: var(--font-weight-bold); letter-spacing: .05em; text-transform: uppercase; }
+.sectionHeading h2 { margin: var(--space-1) 0 0; color: var(--colour-navy); font-size: var(--font-size-xl); }
+.decisionGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); }
+.tableScroller { overflow-x: auto; }
+.comparisonTable { min-width: 720px; }
+.comparisonRow { display: grid; grid-template-columns: minmax(170px, 1.4fr) repeat(4, minmax(110px, 1fr)); align-items: center; gap: var(--space-3); padding: var(--space-3); border-bottom: 1px solid var(--colour-border); }
+.comparisonRow > span:not(:first-child) { font-variant-numeric: tabular-nums; }
+.comparisonRow > span:first-child { display: grid; }
+.comparisonRow small { color: var(--colour-muted); font-size: var(--font-size-xs); }
+.tableHeader { color: var(--colour-muted); background: var(--colour-background); font-size: var(--font-size-xs); font-weight: var(--font-weight-bold); text-transform: uppercase; }
+.primaryRow { border-left: 3px solid var(--colour-green); background: var(--colour-green-light); }
+
+@media (max-width: 1050px) {
+  .forecastLayout { grid-template-columns: 1fr; }
+  .decisionGrid { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .metrics, .forecastDetailGrid { grid-template-columns: 1fr; }
+  .sectionHeading { align-items: flex-start; flex-direction: column; }
+  .comparisonTable { min-width: 650px; }
+}

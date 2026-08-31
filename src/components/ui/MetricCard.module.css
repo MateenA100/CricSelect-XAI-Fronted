@@ -1,0 +1,8 @@
+.card { position:relative; overflow:hidden; background:linear-gradient(145deg,#fff,#f8fbfa); border:1px solid var(--colour-border); border-radius:16px; box-shadow:var(--shadow-sm); padding:19px; display:flex; flex-direction:column; gap:7px; min-width:0; transition:all var(--transition-base); }
+.card::after { content:""; position:absolute; width:74px; height:74px; right:-25px; bottom:-35px; border-radius:50%; background:rgba(11,147,101,.07); }
+.card:hover { transform:translateY(-3px); box-shadow:var(--shadow-md); border-color:rgba(11,147,101,.28); }
+.top { display:flex; align-items:center; justify-content:space-between; }
+.label { font-size:.73rem; color:var(--colour-muted); font-weight:650; letter-spacing:.025em; text-transform:uppercase; }
+.iconWrap { display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:11px; background:linear-gradient(145deg,var(--colour-green-light),#d9f2e8); color:var(--colour-primary); box-shadow:inset 0 0 0 1px rgba(11,147,101,.1); }
+.value { font-family:var(--font-display); font-size:2rem; line-height:1.05; font-weight:780; color:var(--colour-navy); letter-spacing:-.035em; }
+.subLabel { font-size:.72rem; color:var(--colour-muted); }

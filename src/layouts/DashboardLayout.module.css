@@ -1,0 +1,35 @@
+.shell {
+  min-height: 100vh;
+}
+
+.content {
+  margin-left: var(--sidebar-width);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: margin-left var(--transition-base);
+}
+
+.main {
+  flex: 1;
+  padding: 30px clamp(22px, 3vw, 48px) 48px;
+  max-width: 1660px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .content {
+    margin-left: var(--sidebar-width-collapsed);
+  }
+}
+
+@media (max-width: 767px) {
+  .content {
+    margin-left: 0;
+  }
+
+  .main {
+    padding: var(--space-4);
+  }
+}

@@ -1,0 +1,133 @@
+.page { display: grid; gap: var(--space-6); }
+
+.viewTabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+  padding: var(--space-2);
+  border: 1px solid var(--colour-border);
+  border-radius: var(--radius-lg);
+  background: var(--colour-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.viewTabs button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 13px 16px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--colour-muted);
+  font: inherit;
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+}
+
+.viewTabs button:hover { background: var(--colour-background); color: var(--colour-navy); }
+.viewTabs .activeView { border-color: rgba(0, 145, 101, .22); background: var(--colour-green-light); color: var(--colour-green-dark); }
+
+.shortlistControl {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  padding: var(--space-5);
+  border: 1px solid var(--colour-border);
+  border-left: 4px solid var(--colour-green);
+  border-radius: var(--radius-lg);
+  background: var(--colour-white);
+  box-shadow: var(--shadow-sm);
+}
+.shortlistControl h3 { margin: var(--space-1) 0; color: var(--colour-navy); }
+.shortlistControl p { margin: 0; color: var(--colour-muted); }
+.eyebrow { color: var(--colour-green-dark); font-size: var(--font-size-xs); font-weight: var(--font-weight-bold); letter-spacing: .08em; text-transform: uppercase; }
+.controlActions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--space-2); }
+
+.scopeBar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+  padding: var(--space-3);
+  border: 1px solid var(--colour-border);
+  border-radius: var(--radius-lg);
+  background: var(--colour-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.scopeBar button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 10px 14px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--colour-muted);
+  font: inherit;
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+}
+
+.scopeBar button:hover { background: var(--colour-background); color: var(--colour-navy); }
+.scopeBar .activeScope { background: var(--colour-navy); color: var(--colour-white); }
+.scopeBar > span { margin-left: auto; color: var(--colour-muted); font-size: var(--font-size-sm); }
+
+.metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-4); }
+.contentGrid { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(280px, .75fr); gap: var(--space-5); align-items: start; }
+.sideColumn { display: grid; gap: var(--space-5); }
+.roleGroups { display: grid; gap: var(--space-6); }
+.roleGroup { display: grid; gap: var(--space-3); }
+.roleGroup > header { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--colour-border); padding-bottom: var(--space-2); }
+.roleGroup h4 { margin: 0; color: var(--colour-navy); font-size: var(--font-size-md); }
+.roleGroup header span { color: var(--colour-muted); font-size: var(--font-size-sm); }
+.playerList { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); }
+
+.playerCard { padding: var(--space-4); border: 1px solid var(--colour-border); border-radius: var(--radius-md); background: #fbfcfd; }
+.playerHeading, .scoreRow { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); }
+.playerHeading > div { display: grid; min-width: 0; }
+.playerHeading strong { overflow: hidden; color: var(--colour-navy); text-overflow: ellipsis; white-space: nowrap; }
+.playerHeading div span, .scoreRow span, .probabilityLabels { color: var(--colour-muted); font-size: var(--font-size-xs); }
+.tier { padding: 4px 8px; border-radius: var(--radius-full); font-size: var(--font-size-xs); font-weight: var(--font-weight-bold); }
+.poor { background: var(--colour-red-light); color: var(--colour-red); }
+.average { background: var(--colour-amber-light); color: #8a5900; }
+.elite { background: var(--colour-green-light); color: var(--colour-green-dark); }
+.scoreRow { margin-top: var(--space-3); }
+.scoreRow strong { color: var(--colour-navy); }
+.probabilityBar { display: flex; height: 7px; margin: var(--space-2) 0; overflow: hidden; border-radius: var(--radius-full); background: var(--colour-background); }
+.poorBar { background: var(--colour-red); }
+.averageBar { background: var(--colour-amber); }
+.eliteBar { background: var(--colour-green); }
+.probabilityLabels { display: flex; justify-content: space-between; gap: var(--space-2); }
+
+.rules { display: grid; gap: var(--space-2); margin: 0; }
+.rules div, .methodList p { display: flex; justify-content: space-between; gap: var(--space-3); padding-bottom: var(--space-2); border-bottom: 1px solid var(--colour-border); }
+.rules dt, .methodList span { color: var(--colour-muted); }
+.rules dd, .methodList strong { margin: 0; color: var(--colour-navy); text-align: right; }
+.methodList { display: grid; gap: var(--space-2); }
+.methodList p { margin: 0; }
+.methodNote { margin: var(--space-4) 0 0; color: var(--colour-muted); font-size: var(--font-size-sm); line-height: 1.55; }
+.evidenceValue { color: var(--colour-green-dark); font-size: 2rem; font-weight: var(--font-weight-bold); }
+.evidenceLabel { margin: var(--space-1) 0 0; color: var(--colour-text); line-height: 1.45; }
+.robustnessGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); }
+.robustnessGrid div { display: grid; gap: var(--space-1); }
+.robustnessGrid strong { color: var(--colour-navy); font-size: var(--font-size-xl); }
+.robustnessGrid span { color: var(--colour-muted); font-size: var(--font-size-sm); line-height: 1.45; }
+
+@media (max-width: 1100px) {
+  .metrics { grid-template-columns: repeat(2, 1fr); }
+  .contentGrid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  .viewTabs { grid-template-columns: 1fr; }
+  .shortlistControl { align-items: stretch; flex-direction: column; }
+  .controlActions { justify-content: stretch; }
+  .scopeBar { align-items: stretch; flex-direction: column; }
+  .scopeBar > span { margin-left: 0; }
+  .metrics, .playerList, .robustnessGrid { grid-template-columns: 1fr; }
+}
