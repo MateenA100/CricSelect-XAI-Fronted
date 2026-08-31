@@ -1,8 +1,18 @@
 # CricSelect XAI — Dashboard Frontend
 
-The React/Vite single-page application that turns the dissertation's forecasting, profiling, recommendation and optimisation pipeline into an interactive decision-support dashboard for the five leagues (IPL, PSL, BBL, CPL, T20 Blast). It is the presentation layer described in Chapters 3–4: every screen is a thin, stateless view over the Flask API in [`../backend`](../backend), which in turn serves the frozen artifacts produced by the notebooks in [`../Notebooks`](../Notebooks).
+The React/Vite single-page application that turns the dissertation's forecasting, profiling, recommendation and optimisation pipeline into an interactive decision-support dashboard for the five leagues (IPL, PSL, BBL, CPL, T20 Blast). It is the presentation layer described in Chapters 3–4: every screen is a thin, stateless view over the Flask API in **[CricSelect-XAI-Backend](https://github.com/MateenA100/CricSelect-XAI-Backend)**, which in turn serves the frozen artifacts produced by the notebooks in **[CricSelect-XAI](https://github.com/MateenA100/CricSelect-XAI)**.
 
 This frontend does not run any models, compute any statistics, or store any player data itself — it fetches JSON from the backend and renders it. That separation is deliberate: it keeps the analytical logic auditable in the notebooks and the API, and keeps the UI a straightforward, inspectable client on top of it.
+
+This repository is one of three that make up the full project:
+
+| Repository | Role |
+|---|---|
+| [CricSelect-XAI-Backend](https://github.com/MateenA100/CricSelect-XAI-Backend) | The Flask API this dashboard talks to |
+| [CricSelect-XAI](https://github.com/MateenA100/CricSelect-XAI) | The analytical pipeline (23 notebooks) that produces the artifacts the API serves |
+| **CricSelect-XAI-Frontend** *(this repo)* | The dashboard itself |
+
+> **Repository layout note.** Unlike the backend and notebooks repos — which must sit as sibling folders on disk because `app.py` imports code directly from the notebooks folder — this repo has **no filesystem relationship to the other two at all**. It only ever talks to the backend over HTTP (`fetch` calls proxied to `http://127.0.0.1:5000`), so it can be cloned anywhere; the backend just needs to be running and reachable at that address.
 
 ## Contents
 
@@ -37,12 +47,13 @@ No CSS-in-JS, no component library (MUI/AntD/etc.), no data-fetching library (Re
 ## Prerequisites
 
 - **Node.js 18+** and npm
-- The **Flask backend running first**, on `http://127.0.0.1:5000` — see [`../backend/README.md`](../backend/README.md). The dashboard has no data of its own; every page will show an error or empty state until the backend is reachable.
+- The **Flask backend running first**, on `http://127.0.0.1:5000` — see the [backend repo's README](https://github.com/MateenA100/CricSelect-XAI-Backend#quick-start) for its own setup (it additionally needs the notebooks repo cloned as a sibling folder, which this frontend does not). The dashboard has no data of its own; every page will show an error or empty state until the backend is reachable.
 
 ## Getting started
 
 ```bash
-cd frontend
+git clone https://github.com/MateenA100/CricSelect-XAI-Frontend.git
+cd CricSelect-XAI-Frontend
 npm install
 npm run dev
 ```
@@ -122,7 +133,7 @@ This keeps every network call in one file with one error-handling convention, so
 ## Project structure
 
 ```
-frontend/
+CricSelect-XAI-Frontend/
 ├── public/                    Static assets served as-is (favicon, sprite icons)
 ├── src/
 │   ├── api/
@@ -176,13 +187,13 @@ npm run build
 npm run preview   # optional: serve the dist/ build locally to verify it
 ```
 
-`npm run build` type-checks nothing (this is JavaScript, not TypeScript — `@types/react`/`@types/react-dom` are present only so editors get accurate autocomplete) and outputs a static bundle to `dist/`. That bundle still expects `/api/*` requests to reach a Flask backend — in production this means serving `dist/` behind a reverse proxy (e.g. nginx) that forwards `/api` to the Flask process, mirroring what `vite.config.js`'s dev proxy does locally. `dist/` and `node_modules/` are git-ignored and are not part of this submission; regenerate them with the commands above.
+`npm run build` type-checks nothing (this is JavaScript, not TypeScript — `@types/react`/`@types/react-dom` are present only so editors get accurate autocomplete) and outputs a static bundle to `dist/`. That bundle still expects `/api/*` requests to reach a Flask backend — in production this means serving `dist/` behind a reverse proxy (e.g. nginx) that forwards `/api` to the Flask process, mirroring what `vite.config.js`'s dev proxy does locally. `dist/` and `node_modules/` are git-ignored and are not part of this repo; regenerate them with the commands above.
 
 ## Troubleshooting
 
 | Symptom | Likely cause |
 |---|---|
-| Every page shows an error/empty state | Backend isn't running on `127.0.0.1:5000`, or was started from the wrong working directory (it needs `Notebooks/` as a sibling — see `../backend/README.md`) |
+| Every page shows an error/empty state | The backend isn't running on `127.0.0.1:5000` — start it per the [backend repo's README](https://github.com/MateenA100/CricSelect-XAI-Backend#quick-start) (which has its own sibling-folder requirements this frontend doesn't share) |
 | Shortlist "disappears" | It's stored per-browser in `localStorage`; a different browser/profile, or clearing site data, starts with an empty shortlist |
-| `npm install` fails on `xgboost`/`torch`/etc. | Those are Python packages for the notebooks, not this frontend — check you're in `frontend/`, not `Notebooks/` |
+| `npm install` fails on `xgboost`/`torch`/etc. | Those are Python packages for the [notebooks repo](https://github.com/MateenA100/CricSelect-XAI), not this frontend — check you're running `npm install` inside this repo, not a Python one |
 | Changes to `src/config/navigation.js` don't add a working page | Adding a sidebar entry doesn't create a route — a matching `<Route>` must also exist in `App.jsx` pointing at a component in `src/pages/` |
